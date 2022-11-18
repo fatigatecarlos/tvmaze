@@ -17,7 +17,7 @@ const SerieList = ({data}: Array<any> | any) => {
 
   return (
     <FlatList
-      contentContainerStyle={{flexGrow: 1}}
+      contentContainerStyle={styles.flatListContainer}
       data={data}
       renderItem={renderItem}
       numColumns={3}

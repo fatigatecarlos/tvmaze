@@ -30,7 +30,7 @@ const SeasonDetail = (props: {serie: SerieDetail}) => {
         <Text style={styles.subtitle}>Genre:</Text>
         <Text style={styles.text}>
           {serie.info.genres.map((genre: string, index: number) => {
-            if (serie.info.genres.length - 1 == index) {
+            if (serie.info.genres.length - 1 === index) {
               return genre;
             }
             return `${genre}, `;
@@ -39,11 +39,11 @@ const SeasonDetail = (props: {serie: SerieDetail}) => {
       </View>
 
       <View style={styles.cardSpaceBetween}>
-        <View style={{flex: 2}}>
+        <View style={styles.flexSize}>
           <Text style={styles.subtitle}>Days:</Text>
           <Text style={styles.text}>
             {serie.info.schedule.days.map((day: string, index: number) => {
-              if (serie.info.schedule.days.length - 1 == index) {
+              if (serie.info.schedule.days.length - 1 === index) {
                 return day;
               }
               return `${day} - `;

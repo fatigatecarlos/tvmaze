@@ -14,7 +14,7 @@ const SerieCard = (props: {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamListDetail>>();
   let imageSource = require('../../assets/Images/profile.jpg');
-  if (props.image != '') {
+  if (props.image !== '') {
     imageSource = {uri: props.image};
   }
 

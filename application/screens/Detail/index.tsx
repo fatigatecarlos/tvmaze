@@ -13,11 +13,14 @@ import {useRoute} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamListDetail} from '../../Interfaces';
 
+import {
+  RootStackParamListDetail,
+  RootRouteProps,
+  SerieDetail,
+} from '../../Interfaces';
 import {getSerieinfo} from '../../services/Series';
 import SeasonList from '../../components/SeasonList';
-import {RootRouteProps} from '../../Interfaces';
 import SeasonDetail from '../../components/SeasonDetail';
 import styles from './styles';
 import {
@@ -31,7 +34,7 @@ const DetailScreen = () => {
   const [isLoading, setLoading] = useState<boolean>(true);
   const [isFavoriteSerie, setFavoriteSerie] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<number>(1);
-  const [serie, setSerie] = useStateWithCallbackLazy({});
+  const [serie, setSerie] = useStateWithCallbackLazy<SerieDetail>({});
 
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamListDetail>>();
@@ -80,13 +83,13 @@ const DetailScreen = () => {
       setLoading(true);
       setSerieInfo();
     });
-  }, []);
+  });
 
   const TabButton = (title: string, tabId: number) => {
     return (
       <TouchableOpacity onPress={() => changeTab(tabId)}>
         <Text
-          style={[styles.tabTitle, activeTab == tabId ? styles.active : null]}>
+          style={[styles.tabTitle, activeTab === tabId ? styles.active : null]}>
           {title}
         </Text>
       </TouchableOpacity>
@@ -117,10 +120,12 @@ const DetailScreen = () => {
             {TabButton('Details', 2)}
             {FavoriteButton()}
           </View>
-          <View style={[styles.container, activeTab == 1 ? styles.hide : null]}>
+          <View
+            style={[styles.container, activeTab === 1 ? styles.hide : null]}>
             <SeasonDetail serie={serie} />
           </View>
-          <View style={[styles.container, activeTab == 2 ? styles.hide : null]}>
+          <View
+            style={[styles.container, activeTab === 2 ? styles.hide : null]}>
             <SeasonList seasons={serie.seasons} />
           </View>
         </View>

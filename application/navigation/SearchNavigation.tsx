@@ -1,3 +1,4 @@
+import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import SearchScreen from '../screens/Search';
@@ -7,7 +8,6 @@ const Stack = createNativeStackNavigator();
 const serieNavigation = SerieNavigation(Stack);
 
 const SearchNavigation = () => (
-  // eslint-disable-next-line react/react-in-jsx-scope
   <Stack.Navigator>
     <Stack.Screen
       name="SearchScreen"

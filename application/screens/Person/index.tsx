@@ -39,11 +39,11 @@ const PersonScreen = () => {
 
   useEffect(() => {
     setSeries();
-  }, []);
+  });
 
   const renderItem: ListRenderItem<SerieCardInterface> = ({item}) => (
     <SerieCard
-      id={parseInt(item.id)}
+      id={parseInt(item.id, 10)}
       image={item.image ? item.image.medium : ''}
       title={item.name}
       screen={'PersonDetail'}

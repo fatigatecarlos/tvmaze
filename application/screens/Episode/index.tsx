@@ -34,7 +34,7 @@ const EpisodeScreen = () => {
 
   useEffect(() => {
     setEpisodeInfo();
-  }, []);
+  });
 
   const regex = /(<([^>]+)>)/gi;
   const imageSource = episode.image

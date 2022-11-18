@@ -14,13 +14,13 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamListDetail, SerieDetailDb} from '../../Interfaces';
 
 import SerieCard from '../../components/SerieCard';
-import {SerieCardInterface} from '../../Interfaces';
+import {SerieCardInterfaceDb} from '../../Interfaces';
 import styles from './styles';
 import {getSeries} from '../../services/Repository';
 
 const FavoriteScreen = () => {
   const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useStateWithCallbackLazy([]);
+  const [data, setData] = useStateWithCallbackLazy<Array<SerieDetailDb>>([]);
   const [orderList, setOrderList] = useState(true);
 
   const navigation =
@@ -58,11 +58,11 @@ const FavoriteScreen = () => {
       setSeries();
       setOrderList(true);
     });
-  }, []);
+  });
 
-  const renderItem: ListRenderItem<SerieCardInterface> = ({item}) => (
+  const renderItem: ListRenderItem<SerieCardInterfaceDb> = ({item}) => (
     <SerieCard
-      id={parseInt(item.idSerie)}
+      id={parseInt(item.idSerie, 10)}
       image={item.image}
       title={item.name}
       screen={'Details'}
@@ -91,7 +91,7 @@ const FavoriteScreen = () => {
           data={data}
           renderItem={renderItem}
           numColumns={3}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.idSerie}
           ListHeaderComponent={renderHeader}
           ListEmptyComponent={() => {
             return (

@@ -10,6 +10,9 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
   },
+  flatListContainer: {
+    flexGrow: 1,
+  },
 });
 
 export default styles;

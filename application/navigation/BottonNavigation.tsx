@@ -1,3 +1,4 @@
+import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -14,7 +15,6 @@ Icon.loadFont();
 
 const BottomNavigation = () => {
   return (
-    // eslint-disable-next-line react/react-in-jsx-scope
     <Tab.Navigator screenOptions={{headerShown: false}}>
       <Tab.Screen
         name="Series"

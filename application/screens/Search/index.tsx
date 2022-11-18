@@ -9,7 +9,7 @@ import SerieList from '../../components/SerieList';
 const SearchScreen = () => {
   const [isLoading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
-  const [data, setData] = useStateWithCallbackLazy([]);
+  const [data, setData] = useStateWithCallbackLazy<any>([]);
 
   const setSeries = async () => {
     setLoading(true);

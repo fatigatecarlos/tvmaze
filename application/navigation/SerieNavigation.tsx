@@ -1,3 +1,4 @@
+import React from 'react';
 import DetailScreen from '../screens/Detail';
 import EpisodeScreen from '../screens/Episode';
 
@@ -9,7 +10,6 @@ const headerOptions = {
 
 const SeriesNavigation = (Stack: any) => {
   return (
-    // eslint-disable-next-line react/react-in-jsx-scope
     <Stack.Group>
       <Stack.Screen
         name="Details"

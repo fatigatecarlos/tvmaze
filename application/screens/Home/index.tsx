@@ -5,7 +5,6 @@ import {
   Image,
   FlatList,
   ListRenderItem,
-  Text,
 } from 'react-native';
 import {useStateWithCallbackLazy} from 'use-state-with-callback';
 
@@ -40,11 +39,11 @@ const HomeScreen = () => {
 
   useEffect(() => {
     setSeries();
-  }, []);
+  });
 
   const renderItem: ListRenderItem<SerieCardInterface> = ({item}) => (
     <SerieCard
-      id={parseInt(item.id)}
+      id={parseInt(item.id, 10)}
       image={item.image ? item.image.medium : ''}
       title={item.name}
       screen={'Details'}

@@ -12,16 +12,19 @@ import {useStateWithCallbackLazy} from 'use-state-with-callback';
 import {useRoute} from '@react-navigation/native';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamListDetail} from '../../Interfaces';
 
+import {
+  RootStackParamListDetail,
+  RootRouteProps,
+  Person,
+} from '../../Interfaces';
 import {getPeopleInfo} from '../../services/Series';
-import {RootRouteProps} from '../../Interfaces';
 import styles from './styles';
 import SerieCard from '../../components/SerieCard';
 
 const PersonDetailScreen = () => {
   const [isLoading, setLoading] = useState<boolean>(true);
-  const [person, setPerson] = useStateWithCallbackLazy({});
+  const [person, setPerson] = useStateWithCallbackLazy<Person>({});
 
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamListDetail>>();
@@ -45,11 +48,11 @@ const PersonDetailScreen = () => {
       setLoading(true);
       setSerieInfo();
     });
-  }, []);
+  });
 
   const renderItem: ListRenderItem<any> = ({item}) => (
     <SerieCard
-      id={parseInt(item.id)}
+      id={parseInt(item.id, 10)}
       image={item.image ? item.image.medium : ''}
       title={item.name}
       screen={'Details'}

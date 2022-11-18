@@ -1,4 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import PersonScreen from '../screens/Person';
@@ -15,7 +15,6 @@ const headerOptions = {
 };
 
 const SearchNavigation = () => (
-  // eslint-disable-next-line react/react-in-jsx-scope
   <Stack.Navigator>
     <Stack.Screen
       name="PersonScreen"
@@ -24,7 +23,6 @@ const SearchNavigation = () => (
         headerShown: false,
       }}
     />
-
     <Stack.Screen
       name="PersonDetail"
       component={PersonDetailScreen}
