@@ -1,5 +1,3 @@
-# tvmaze
-
 # React Native Take-home TVMaze
 
 The main purpose of this project is to test what kind of solutions you can give to certain
