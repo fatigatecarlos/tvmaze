@@ -9,6 +9,7 @@ const headerOptions = {
 
 const SeriesNavigation = (Stack: any) => {
   return (
+    // eslint-disable-next-line react/react-in-jsx-scope
     <Stack.Group>
       <Stack.Screen
         name="Details"
