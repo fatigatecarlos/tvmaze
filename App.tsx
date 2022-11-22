@@ -9,26 +9,30 @@
  */
 
 import React from 'react';
-
-import { NavigationContainer } from '@react-navigation/native'
-import { SafeAreaView, StatusBar } from 'react-native'
-import SplashScreen from "react-native-splash-screen"
-import BottonNavigation from './application/navigation/BottonNavigation'
-import { backgroundColor } from "./application/assets/Colors"
-
-SplashScreen.hide()
+import {StyleSheet} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {SafeAreaView, StatusBar} from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
+import BottonNavigation from './application/navigation/BottonNavigation';
+import {backgroundColor} from './application/assets/Colors';
 
 const App = () => {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <StatusBar
-                backgroundColor={backgroundColor}
-            />
-            <NavigationContainer >
-                <BottonNavigation />
-            </NavigationContainer>
-        </SafeAreaView>
-    );
+  SplashScreen.hide();
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor={backgroundColor} />
+      <NavigationContainer>
+        <BottonNavigation />
+      </NavigationContainer>
+    </SafeAreaView>
+  );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default App;

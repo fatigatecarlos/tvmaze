@@ -33,6 +33,7 @@ const HomeScreen = () => {
   };
 
   const nextPage = () => {
+    setUpdatingList(true);
     setPage(page + 1);
     setSeries();
   };
