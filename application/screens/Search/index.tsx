@@ -42,8 +42,11 @@ const SearchScreen = () => {
           style={styles.input}
           placeholder="Search"
           value={search}
-          onChangeText={text => execSearch(text)}
+          onChangeText={text => setSearch(text)}
+          onEndEditing={setSeries()}
           autoFocus={true}
+          clearButtonMode={'while-editing'}
+          inlineImageLeft={'search_icon'}
         />
       </View>
     );
