@@ -1,7 +1,7 @@
 import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import SeriesNavigation from './HomeNavigation';
 import SearchNavigation from './SearchNavigation';
 import FavoriteNavigation from './FavoriteNavigation';

@@ -12,9 +12,9 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaView, StatusBar} from 'react-native';
-import SplashScreen from 'react-native-splash-screen';
-import BottonNavigation from './application/navigation/BottonNavigation';
 import {backgroundColor} from './application/assets/Colors';
+import BottonNavigation from './application/navigation/BottonNavigation';
+import SplashScreen from 'react-native-splash-screen';
 
 const App = () => {
   SplashScreen.hide();
